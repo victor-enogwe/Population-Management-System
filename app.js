@@ -7,7 +7,6 @@ const { mongoose, schema } = require('./database')
 const {
   httpRequestLoggingMiddleware: logMiddleware,
   graphqlExpressMiddleware,
-  checkQuerySizeMiddleware: queryMiddleware,
   apiHomeMiddleware,
   httpErrorMiddleware,
   errorFourZeroFourMiddleware
@@ -59,7 +58,7 @@ app.set('json replacer', jsonReplacer)
 app.use(express.urlencoded({ extended: false }), express.json())
 app.use(helmet(), logMiddleware)
 app.get('/', apiHomeMiddleware)
-app.use('/graphql', queryMiddleware, graphqlExpressMiddleware({ schema }))
+app.use('/graphql', graphqlExpressMiddleware({ schema }))
 app.use(errorFourZeroFourMiddleware, httpErrorMiddleware)
 
 server.on('listening', onListening.bind(null, server)).on('error', onError)

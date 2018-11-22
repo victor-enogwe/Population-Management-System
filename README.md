@@ -1,4 +1,8 @@
 # Population-Management-System
+
+[![Build Status](https://travis-ci.com/victor-enogwe/Population-Management-System.svg?branch=master)](https://travis-ci.com/victor-enogwe/Population-Management-System)
+[![Coverage Status](https://coveralls.io/repos/github/victor-enogwe/Population-Management-System/badge.svg?branch=master)](https://coveralls.io/github/victor-enogwe/Population-Management-System?branch=master)
+
 Population Management System that contains a list of locations and the total number of residents in each location broken down by gender
 
 ## Technologies

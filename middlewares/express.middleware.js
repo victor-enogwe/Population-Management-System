@@ -92,29 +92,9 @@ function graphqlExpressMiddleware ({ schema }) {
   })(req, res)
 }
 
-/**
- * CheckQuerySizeMiddleware Middlware
- *
- * @export
- * @param {Object} req the http request object
- * @param {Object} res the http response object
- * @param {Function} next the next middleware function
- *
- * @returns {Object} the next middleware function
- */
-function checkQuerySizeMiddleware (req, res, next) {
-  const query = req.query.query || req.body.query
-  const message = 'query size exceeded'
-  if (query && query.length > 2000) {
-    return res.status(500).json({ status: 'error', message })
-  }
-  next()
-}
-
 module.exports = {
   apiHomeMiddleware,
   graphqlExpressMiddleware,
-  checkQuerySizeMiddleware,
   errorFourZeroFourMiddleware,
   httpErrorMiddleware,
   httpRequestLoggingMiddleware
