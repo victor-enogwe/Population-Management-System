@@ -4,7 +4,7 @@ sudo: required
 services:
   - mongodb
 before_install:
-  - psql -c 'create database sms;' -U postgres
+  - export MONGODB_URI=mongodb://localhost/pms
 script:
   - npm test
   - npm run coveralls
