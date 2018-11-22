@@ -1,0 +1,8 @@
+{
+  "name": "population-management-system",
+  "description": "Population Management System that contains a list of locations and the total number of residents in each location broken down by gender",
+  "repository": "ggit+https://github.com/victor-enogwe/Population-Management-System.git",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku", "graphql", "graphql-compose", "graphql-compose-mongoose"],
+  "image": "heroku/nodejs"
+}

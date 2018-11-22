@@ -1,0 +1,87 @@
+{
+  "name": "population-management-system",
+  "version": "1.0.0",
+  "description": "Population Management System that contains a list of locations and the total number of residents in each location broken down by gender",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js",
+    "lint": "standard --fix",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "test": "export NODE_ENV=test && standard && nyc _mocha test/index.spec.js",
+    "test:watch": "export NODE_ENV=test && _mocha test/index.spec.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-enogwe/Population-Management-System.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "heroku",
+    "graphql",
+    "graphql-compose",
+    "graphql-compose-mongoose"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-enogwe/Population-Management-System/issues"
+  },
+  "homepage": "https://github.com/victor-enogwe/Population-Management-System#readme",
+  "dependencies": {
+    "bluebird": "3.5.3",
+    "express": "4.16.4",
+    "express-graphql": "0.7.1",
+    "graphql": "14.0.2",
+    "graphql-compose": "5.3.4",
+    "graphql-compose-mongoose": "5.1.1",
+    "helmet": "3.15.0",
+    "mongoose": "5.3.12",
+    "morgan": "1.9.1",
+    "supertest": "3.3.0",
+    "winston": "3.1.0"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "coveralls": "3.0.2",
+    "dotenv": "6.1.0",
+    "glob": "7.1.3",
+    "graphql-tools": "4.0.3",
+    "mocha": "5.2.0",
+    "nodemon": "1.18.4",
+    "nyc": "13.0.1",
+    "sinon": "6.3.1",
+    "standard": "12.0.1"
+  },
+  "nyc": {
+    "all": false,
+    "check-coverage": false,
+    "eager": true,
+    "cache": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "clean": true,
+    "temp-directory": "./coverage/.tmp"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "coverage/*",
+      "dist/*"
+    ],
+    "delay": "2000"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "after",
+      "beforeEach",
+      "afterEach"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+language: node_js
+os: linux
+sudo: required
+services:
+  - mongodb
+before_install:
+  - export MONGODB_URI=mongodb://localhost/pms
+script:
+  - npm test
+  - npm run coveralls
+node_js: "10"
+cache:
+  directories:
+    - node_modules
+install: npm install
